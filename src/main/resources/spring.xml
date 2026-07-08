@@ -5,5 +5,11 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
+    <bean id="bookRepository" class="com.ukr.Repository.InMemoryBookRepository"/>
+    <bean id="memberRepository" class="com.ukr.Repository.InMemoryMemberRepository"/>
+    <bean id="libraryService" class="com.ukr.Service.LibraryServiceImpl">
+        <constructor-arg ref="bookRepository"/>
+        <constructor-arg ref="memberRepository"/>
+    </bean>
 
 </beans>
